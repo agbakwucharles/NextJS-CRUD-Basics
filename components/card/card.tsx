@@ -12,7 +12,7 @@ interface cardInterface {
 }
 
 
-const card = ({ title, id }: cardInterface) => {
+const Card = ({ title, id }: cardInterface) => {
     const router = useRouter();
     const onDelete = async () => {
         const removeIt = confirm("Are you sure you want to delete this card? Type 'delete' to confirm.");
@@ -58,4 +58,4 @@ const card = ({ title, id }: cardInterface) => {
     )
 }
 
-export default card
+export default Card
