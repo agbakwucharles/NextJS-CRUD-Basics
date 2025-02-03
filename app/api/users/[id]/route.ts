@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import connectMongoDB from '../../../../libs/mongodb';
 import User from '../../../../models/users';
 
-export async function DELETE(req: Request, { params }: { params: { id: string } }) {
+export async function DELETE({ params }: { params: { id: string } }) {
     const { id } = await params;
     await connectMongoDB();
     const user = await User.findByIdAndDelete(id);
