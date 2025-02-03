@@ -3,7 +3,7 @@
 import React from 'react'
 import { useRouter } from "next/navigation";
 
-const addbtn = () => {
+const Addbtn = () => {
     const router = useRouter();
     const createUser = async () => {
         const newUser = prompt("Enter new user name");
@@ -35,4 +35,4 @@ const addbtn = () => {
     )
 }
 
-export default addbtn
+export default Addbtn
