@@ -1,6 +1,6 @@
 import connectMongoDB from '../../../libs/mongodb';
 import User from '../../../models/users';
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
 export async function GET() {
     await connectMongoDB();
@@ -8,7 +8,7 @@ export async function GET() {
     return NextResponse.json({ users });
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
     const { name } = await request.json();
     await connectMongoDB();
     await User.create({ name });

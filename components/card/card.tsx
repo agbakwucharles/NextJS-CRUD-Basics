@@ -33,7 +33,7 @@ const Card = ({ title, id }: cardInterface) => {
 
         if (newName) {
             const res = await fetch(`http://localhost:3000/api/users/${id}`, {
-                method: 'PUT',
+                method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -47,6 +47,7 @@ const Card = ({ title, id }: cardInterface) => {
     }
 
     return (
+        //onClick={() => router.push(`/${id}`)}
         <div className={styles.card}>
             <div className='flex'>
                 <Button onDelete={onDelete} />
